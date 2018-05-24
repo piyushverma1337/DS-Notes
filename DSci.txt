@@ -1,0 +1,116 @@
+LEGEND: 
+	** - need to go through
+	
+LINGO:
+	Spurious: not causal
+	Stochastic: Random *loosely
+
+VARIANCE:
+	The average of the squared differences from the Mean.
+		S^2 = (M-a)^2 + (M-b)^2 ..... (M-N)^2 / n
+		S - standard deviation
+		
+CAUSALITY:
+
+CORRELATION:
+
+REGULARIZATION:
+	https://www.quora.com/What-is-regularization-in-machine-learning
+	https://stats.stackexchange.com/questions/4961/what-is-regularization-in-plain-english
+
+REGRESSION:
+	investigates the relationship between a dependent (target) and independent variable (s) (predictor)
+	
+    It indicates the significant relationships between dependent variable and independent variable.
+    It indicates the strength of impact of multiple independent variables on a dependent variable.
+
+	mostly driven by three metrics (number of independent variables, type of dependent variables and shape of regression line)
+	
+	LINEAR REGRESSION:
+		Y=a+b*X + e, 
+		a is intercept 
+		b is slope of the line and 
+		e is error term, value needed to correct for a prediction error between the observed and predicted value
+		X dependent, Y independent
+		
+		simple linear regression and multiple linear regression is that, multiple linear regression has (>1) independent variables
+		
+		LEAST SQUARE METHOD: 
+			most common method used for fitting a regression line
+			minimizing the sum of the squares(negatives are removed) of the vertical deviations from each data point to the line
+			
+			**Model performance metrics**
+		
+		##Drawbacks
+		must be linear relationship between independent and dependent variables,
+		very sensitive to Outliers
+	
+	LOGISTIC REGRESSION:
+		odds= p/ (1-p) = probability of event occurrence / probability of not event occurrence
+		ln(odds) = ln(p/(1-p))
+		logit(p) = ln(p/(1-p)) = b0+b1X1+b2X2+b3X3....+bkXk
+		logit = logistic function
+		
+		used to find the probability of event=Success and event=Failure
+		
+		dependent variable is binary in nature, 
+		value of Y ranges from 0 to 1 
+		
+		widely used for classification problems	
+		
+		can handle various types of relationships as it applies non-linear log transformation to the predicted odds ratio
+		
+		requires large sample sizes 
+		
+		If the values of dependent variable is ordinal, then it is called as Ordinal logistic regression
+		If dependent variable is multi class then it is known as Multinomial Logistic regression.
+		
+	POLYNOMIAL REGRESSION:
+		if the power of independent variable is more than 1.
+		
+		y=a+b*x^2
+		
+		best fit line is not a straight line. It is rather a curve that fits into the data points.
+		
+		
+	STEPWISE REGRESSION:
+		used when we deal with multiple independent variables,
+		selection of variables is done with an automatic process,
+		by observing statistical values **(R-square, t-stats and AIC metric)** to discern significant variables.
+		
+		
+		*Standard stepwise regression - adds and removes predictors as needed for each step.
+		*Forward selection - starts with most significant predictor in the model and adds variable for each step.
+		*Backward elimination - starts with all predictors in the model and removes the least significant variable for each step.
+	
+	RIDGE REGRESSION:
+		used when the data suffers from multicollinearity(independent variables are highly correlated)
+		by adding a degree of bias to the regression estimates, ridge regression reduces the standard errors
+		
+		prediction errors can be decomposed into two sub components, First is due to the biased and second is due to the variance
+		
+		Ridge regression solves the multicollinearity problem through shrinkage parameter(λ) - 
+			naive or raw estimate is improved by combining it with other information. The term relates to the notion that the improved
+			estimate is made closer to the value supplied by the 'other information' than the raw estimate
+		
+		
+		*shrinks the value of coefficients but doesn’t reaches zero, which suggests no feature selection feature
+		*regularization method and uses l2 regularization.
+		
+	LASSO REGRESSION: (Least Absolute Shrinkage and Selection Operator) 
+		like Ridge Regression, also penalizes the absolute size of the regression coefficients.
+		uses absolute values in the penalty function, instead of squares
+		
+		leads to penalizing values which causes some of the parameter estimates to turn out exactly zero, 
+		Hence,Larger the penalty applied
+		results to variable selection out of given n variables
+		
+		This is a regularization method and uses **l1 regularization**
+		If group of predictors are highly correlated, picks only one of them and shrinks the others to zero
+		
+	ELASTICNET REGRESSION:
+		
+		
+		
+		
+		
